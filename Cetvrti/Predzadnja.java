@@ -9,32 +9,17 @@ public class Predzadnja {
 		Scanner unos = new Scanner(System.in);
 
 		String recenica;
-		
+
 		System.out.println("Unesite recenicu: ");
 		recenica = unos.nextLine();
-	
-		
-		String linija=" ", rijec, predzadnja;
-		while((recenica = unos.nextLine()) != null) {
-			rijec = "";
-			predzadnja = "";
-			int brojacSpaceova = 0;
-			for (int i = linija.length()-1; i >= 0; i--) {
-				if(recenica.charAt(i) == ' ') {
-					brojacSpaceova++;
-					if(brojacSpaceova >= 2)
-						break;
-					rijec = "";
-				}
-				else
-					rijec += recenica.charAt(i);
-			}
-			for (int i = rijec.length()-1; i >= 0; i--) {
-				predzadnja += rijec.charAt(i);
-			}
-			System.out.println(predzadnja);
-		}
-		
+
+		String[] rijeci = recenica.split("[ ]+");
+
+		System.out.println("Predzadnja rijeè u reèenici je: " + rijeci[rijeci.length - 2]); // predzadnja
+																							// rijec
+		System.out.println("Broj rijeci: " + rijeci.length); // broj rijeci u
+																// recnici
+
 		unos.close();
 	}
 
